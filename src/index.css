@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+
+:root {
+    --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
+}
+
+html,
+body {
+    width: 100dvw;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    scroll-behavior: smooth;
+    font-family: "Mona Sans", sans-serif;
+}
+
+section {
+    width: 100dvw;
+}
+
+@theme {
+    --font-sans: "Mona Sans", sans-serif;
+    --color-white-50: #d9ecff;
+    --color-black-50: #1c1c21;
+    --color-black-100: #0e0e10;
+    --color-black-200: #282732;
+    --color-blue-50: #839cb5;
+    --color-blue-100: #2d2d38;
+}
+
+@layer utilities {
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+    .flex-col-center {
+        @apply flex flex-col justify-center items-center;
+    }
+}
+
+@layer components {
+    .padding-x {
+        @apply px-5 md:px-10;
+    }
+
+    .padding-x-lg {
+        @apply px-5 md:px-20;
+    }
+
+    .section-padding {
+        @apply px-5 md:px-10 md:mt-40 mt-20;
+    }
+
+    .mt-responsive {
+        @apply xl:mt-20 md:mt-0 mt-40;
+    }
+
+    /* General Grids */
+    .grid-base {
+        @apply grid grid-cols-1;
+    }
+
+    .grid-2-cols {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+    }
+
+    .grid-3-cols {
+        @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6;
+    }
+
+    .grid-3-cols-md-tight {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0;
+    }
+
+    .grid-4-cols {
+        @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7;
+    }
+
+    .grid-12-cols {
+        @apply grid grid-cols-1 xl:grid-cols-12 gap-10;
+    }
+
+    .hero-layout {
+        @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
+    }
+
+    .hero-text {
+        @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
+
+        img {
+            @apply size-8 md:size-10 object-contain;
+        }
+
+        .slide {
+            @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
+        }
+    }
+}
